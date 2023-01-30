@@ -2,9 +2,9 @@
 var color= "red";
 
 switch (color) {
-    case 'blue':
-        console.log("its blue");
-        break;
+         case 'blue':
+            console.log("its blue");
+             break;
     
         case "green":
             console.log("its green");
