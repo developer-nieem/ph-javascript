@@ -35,7 +35,7 @@ console.log(output);
 
 
 // // ============= Problem solving 3
-
+/* 
 function findOddSum(number){
             
     // =======Find odd number from array
@@ -64,3 +64,32 @@ var arrayValus = [5, 7, 8, 10, 45, 30];
 var output= findOddSum(arrayValus);
 
 console.log(output);
+ */
+
+// ===================practice challenge   1
+/* 
+function leapYear(year){
+
+    if(year % 2 == 0 && year % 100 != 0 || year % 400 == 0){
+        return true;
+    }
+    return false;
+}
+
+var output= leapYear(2023);
+console.log(output);
+ */
+
+// ===================practice challenge   2
+
+function myAge(year){
+
+    if(year%2 == 0){
+        return  true;
+    }
+    return false;
+}
+
+var mybirthYear = myAge(2000);
+
+console.log(mybirthYear);
