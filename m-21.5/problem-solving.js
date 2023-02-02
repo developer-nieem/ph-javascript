@@ -62,5 +62,5 @@ function hotel(day){
     }
 }
 
-var output= hotel(18);
+var output= hotel(25);
 console.log(output);
