@@ -1,20 +1,26 @@
 
-const kotha = "tui je koi gEli beta bollio na ";
+// const kotha = "tui je koi gEli beta bollio na ";
 
-const findString = "Geli";
+// const findString = "Geli";
 
-const output = kotha.toLowerCase().includes(findString.toLowerCase())
+// const output = kotha.toLowerCase().includes(findString.toLowerCase())
 
 // console.log(output);
 
 // index of
 
-console.log(kotha.indexOf("koi"));
+// console.log(kotha.indexOf("koi"));
 
-if(kotha.indexOf("koi") !== -1){
-    console.log("aceee oi line a");
+// if(kotha.indexOf("koi") !== -1){
+//     console.log("aceee oi line a");
+// }
+
+// // ==========  startwith and endwith
+// console.log(kotha.startsWith("tui"));
+// console.log(kotha.endsWith("tui"));
+
+let sum=0; 
+for( let i = 0; i<=3;i++){ 
+sum = sum + i; 
 }
-
-// ==========  startwith and endwith
-console.log(kotha.startsWith("tui"));
-console.log(kotha.endsWith("tui"));
+console.log(sum);
