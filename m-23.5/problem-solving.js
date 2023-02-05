@@ -78,3 +78,21 @@ bestFriend(friends) */
 
 
 
+function positiveNumber(numbers) {
+    let positiveNumber = [];
+    for (let i = 0; i < numbers.length; i++) {
+        const element = numbers[i];
+        // console.log(element);
+        if(element >= 0){
+            positiveNumber.push(element);
+        }else{
+            break;
+        }
+    }
+    return positiveNumber;
+}
+
+let numbers = [25,35,45,-12,50,-50,-20,60,70];
+ const output = positiveNumber(numbers);
+ console.log(output);
+
