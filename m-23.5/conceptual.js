@@ -179,3 +179,22 @@ var output = isBestFriend(
 console.log(output);
 
  */
+
+//  ======== Problem 4:  publicBusFare
+
+
+function publicBusFare (pesenger){
+    if (typeof pesenger !== "number" || pesenger < 50) {
+        return "please provide valid values";
+    }
+
+    let remainingOwnBus = pesenger % 50;
+
+    let RemaingMicroBus = remainingOwnBus % 11;
+
+    let totalCost = RemaingMicroBus * 250; 
+    return totalCost
+}
+
+const output = publicBusFare(365);
+console.log(output);
