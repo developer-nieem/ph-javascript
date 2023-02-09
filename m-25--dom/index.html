@@ -14,31 +14,84 @@
         li{
             list-style: none;
         }
+        .bg-color{
+            background-color: yellow !important;
+        }
     </style>
 </head>
 <body>
     <header>
         <h2>title this is </h2>
     </header>
-    <main>
-        <ul>
-            <li><a href="#">Hello</a></li>
-            <li><a href="#">nieem</a></li>
-            <li><a href="#">hasan</a></li>
-            <li><a href="#">kasan</a></li>
-            <li><a href="#">masan</a></li>
-            <li><a href="#">tasan</a></li>
-            <li><a href="#">Hello</a></li>
-        </ul>
+    <main id="main-container">
+        <section>
+            <ul>
+                <li id="first" class="m n o p"><a href="#">Hello</a></li>
+                <li><a href="#">nieem</a></li>
+                <li><a href="#">hasan</a></li>
+                <li><a href="#">kasan</a></li>
+                <li><a href="#">masan</a></li>
+                <li><a href="#">tasan</a></li>
+                <li><a href="#">Hello</a></li>
+            </ul>
+        </section>
+        <section>
+            <ul>
+                <li id="first" class="m n o p"><a href="#">Hello</a></li>
+                <li><a href="#">nieem</a></li>
+                <li><a href="#">hasan</a></li>
+                <li><a href="#">kasan</a></li>
+                <li><a href="#">masan</a></li>
+                <li><a href="#">tasan</a></li>
+                <li><a href="#">Hello</a></li>
+            </ul>
+        </section>
+        <section id="place-design">
+            <ul>
+                <li id="first" class="m n o p"><a href="#">Hello</a></li>
+                <li><a href="#">nieem</a></li>
+                <li><a href="#">hasan</a></li>
+                <li><a href="#">kasan</a></li>
+                <li><a href="#">masan</a></li>
+                <li><a href="#">tasan</a></li>
+                <li><a href="#">Hello</a></li>
+            </ul>
+        </section>
+        <section>
+            <ul>
+                <li id="first" class="m n o p"><a href="#">Hello</a></li>
+                <li><a href="#">nieem</a></li>
+                <li><a href="#">hasan</a></li>
+                <li><a href="#">kasan</a></li>
+                <li><a href="#">masan</a></li>
+                <li><a href="#">tasan</a></li>
+                <li><a href="#">Hello</a></li>
+            </ul>
+        </section>
         
     </main>
 
+    <script src="js/append.js"></script>
+    <script src="js/main.js"></script>
     <script>
         console.log(document.body);
         const names =  document.getElementsByTagName('li');
         for (const menu of names) {
             console.log(menu.innerText);
         }
+                
+        // let style = document.querySelectorAll('#first a')
+        // style.innerText= "tui hello"
+        document.getElementById('first').style.backgroundColor="red";
+
+
+        /* 
+        getelementsByTagname
+        getElementById
+        getElementsByClassName
+        querySelector
+        querySelectorAll
+        */
     </script>
 </body>
 </html>
