@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>comment</title>
+</head>
+<body>
+    
+    <div id="comment-area">
+        <h4>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Praesentium, autem illo commodi dignissimos omnis, consectetur, at rem sequi dolore sed provident ut? At repudiandae natus voluptatibus aspernatur officiis accusamus consectetur.</h4>
+        <h4>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Praesentium, autem illo commodi dignissimos omnis, consectetur, at rem sequi dolore sed provident ut? At repudiandae natus voluptatibus aspernatur officiis accusamus consectetur.</h4>
+        <h4>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Praesentium, autem illo commodi dignissimos omnis, consectetur, at rem sequi dolore sed provident ut? At repudiandae natus voluptatibus aspernatur officiis accusamus consectetur.</h4>
+       
+    </div>
+
+    <textarea name="" id="comment-box" cols="100" rows="10"></textarea>
+        <br>
+        <button id="comment-btn">Comment</button>
+    <script>
+        // first step
+        document.getElementById('comment-btn').addEventListener('click' , function(){
+            // 2nd step
+            const commentBox =  document.getElementById('comment-box');
+            const commentText = commentBox.value;
+            
+            // 3rd step
+            const commentArea = document.getElementById('comment-area');
+            const h4 =  document.createElement('h4');
+            h4.innerText = commentText;
+
+            // append under main content
+            commentArea.appendChild(h4);
+
+            // after submit comment button clear value
+            commentBox.value = '';
+        })
+    </script>
+</body>
+</html>

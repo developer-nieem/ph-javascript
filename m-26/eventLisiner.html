@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event lisener</title>
+</head>
+<body>
+    <h1>Change the background color </h1>
+    <!-- way one -->
+    <button id="make-red">Make red</button>
+    <!-- way two -->
+    <button id="make-blue">Make bule</button>
+    <button id="make-orrange">Make orrange</button>
+
+
+    <script>
+
+    //    way one
+        const makeRed =  document.getElementById('make-red');
+        makeRed.addEventListener('click', makRedMe);
+        function makRedMe(){
+            document.body.style.backgroundColor = 'red'
+        }
+
+        // way two 
+        const makeblue = document.getElementById('make-blue');
+        makeblue.addEventListener('click', function(){
+            document.body.style.backgroundColor ='blue';
+        })
+
+        // way three
+            // most importaint
+        document.getElementById('make-orrange').addEventListener('click', function(){
+            document.body.style.backgroundColor = 'orange'
+        })
+
+
+    </script>
+</body>
+</html>

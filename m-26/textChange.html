@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text change</title>
+</head>
+<body>
+    
+    <p id="change-function"> change this</p>
+    <button onclick="changeText()">change by function</button>
+
+    <!-- another -->
+    <h4 id="text-store">text add</h4>
+    <button id="btn-update">change me by event lisener</button>
+
+    <!-- input text -->
+
+    <p id="updated-input-text">input text changing</p>
+    <input id="input-box" type="text">
+    <button id="submit">submit</button>
+
+    <script>
+        function changeText(){
+           const textFixed = document.getElementById('change-function');
+           textFixed.innerText ="ki obosta kemon acoooo";
+        }
+
+
+        // another way
+         document.getElementById('btn-update').addEventListener('click', function(){
+            const textStore = document.getElementById('text-store');
+            textStore.innerText = 'aiboro kintu change hobe ';
+
+         })
+
+
+        //  input text
+         document.getElementById('submit').addEventListener('click', function(){
+            const inputBox =document.getElementById('input-box');
+            const inputText = inputBox.value;
+           
+            const updatedInputText= document.getElementById('updated-input-text');
+            updatedInputText.innerHTML = inputText;
+            inputBox.value = '';
+         })
+
+    </script>
+</body>
+</html>

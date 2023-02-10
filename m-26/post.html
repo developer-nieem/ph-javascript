@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>post</title>
+</head>
+<body>
+    
+    <div id="post-area">
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque, eveniet. Quia rem dignissimos eveniet, accusantium maxime amet sed ullam accusamus minus voluptatum enim nobis et! Iste aspernatur ratione totam neque.</p>
+    </div>
+    
+        <textarea name="" id="post-box" cols="80" rows="10"></textarea>
+        <br>
+        <button id="submit-post">Post</button>
+    
+
+    <script>
+        document.getElementById('submit-post').addEventListener('click', function(){
+            
+            const postBox = document.getElementById('post-box');
+            const postText =  postBox.value;
+            
+
+            const postArea = document.getElementById('post-area');
+            const p = document.createElement('p');
+            p.innerText = postText;
+
+            postArea.appendChild(p);
+            postBox.value = '';
+            
+        })
+    </script>
+</body>
+</html>
