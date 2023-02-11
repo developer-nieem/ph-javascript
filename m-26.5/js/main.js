@@ -21,7 +21,7 @@
 
 .
 
-৭. একদম নিচে একটা LET'S STAY IN TOUCH নামে একটা জিনিস আছে। সেখানে তুমি submit বাটনটা disable করে ফেলবে। তারপর কেউ যদি উপরে input ফিল্ডে যদি একজাক্টলি email শব্দটা লিখে। তাহলে বাটন একটিভ হবে। আর যদি অন্য কিছু লিখে তাহলে বাটনটা একটিভ হবে না। 
+(৭). একদম নিচে একটা LET'S STAY IN TOUCH নামে একটা জিনিস আছে। সেখানে তুমি submit বাটনটা disable করে ফেলবে। তারপর কেউ যদি উপরে input ফিল্ডে যদি একজাক্টলি email শব্দটা লিখে। তাহলে বাটন একটিভ হবে। আর যদি অন্য কিছু লিখে তাহলে বাটনটা একটিভ হবে না। 
 
 ৮. (অপশনাল) একটা মজার চ্যালেঞ্জ। কোন একটা ইমেজ এর উপরে mouseenter করলে সেই ইমেজটা চেইঞ্জ হয়ে যাবে। একটু গুগলে সার্চ দিয়ে দেখো। জিনিসটা কিভাবে করা যেতে পারে। 
 
@@ -75,3 +75,40 @@ for (const perBtn of allBuyNowBtn) {
     })
 } */
 
+
+// input value validation check  solved - 7
+
+const inputValue = document.getElementById('exampleInputEmail1');
+inputValue.addEventListener('keyup' , function(){
+    const inputText = inputValue.value;
+
+    const fromBtn = document.getElementById('form-btn');
+
+    if(inputText === 'email'){
+        fromBtn.removeAttribute('disabled');
+    }else{
+        fromBtn.setAttribute('disabled' , true)
+    }
+})
+
+
+// change image when the mouse enter a image --- solved - 8 
+
+const imagechange = document.getElementById('image-change')
+imagechange.addEventListener('mouseenter' , function(){
+    
+    imagechange.src = "./images/shoes/shoe-2.png";
+   
+})
+
+// doubleclick change bg color ---- solved - 9
+
+const bgChange = document.getElementById('change-bg-color');
+bgChange.addEventListener('dblclick' , function(){
+    bgChange.style.backgroundColor ='blue';
+} )
+
+// function changeBg(){
+//     document.getElementById('change-bg-color').style.backgroundColor = 'red';
+// }
+ 
