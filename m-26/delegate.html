@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delegate</title>
+</head>
+<body>
+    
+    <section>
+        <h2>This is delegate practics</h2>
+        <ul id="ul-item">
+            <li class="item">this is a delegate item - 1</li>
+            <li class="item">this is a delegate item - 2</li>
+            <li class="item">this is a delegate item - 3</li>
+            <li class="item">this is a delegate item - 4</li>
+            <li class="item">this is a delegate item - 5</li>
+            <li class="item">this is a delegate item - 6</li>
+        </ul>
+
+        <button id="item-add-btn">Add more</button>
+    </section>
+
+    <script>
+        
+          /*  let items = document.getElementsByClassName("item");
+
+           for (const item of items) {
+                item.addEventListener('click' , function(event){
+                    event.target.parentNode.removeChild(event.target);
+                })
+           } */
+
+        //    add eventleistener on parent child 
+    document.getElementById('ul-item').addEventListener('click' , function(event){
+            event.target.parentNode.removeChild(event.target)
+    })
+
+
+    // add new item thorugh the button
+           document.getElementById('item-add-btn').addEventListener('click' , function(){
+
+            const ulItem =   document.getElementById('ul-item');
+          const li = document.createElement('li');
+          li.innerText= "this is new brand item -$";
+           
+          ulItem.appendChild(li);
+
+           })
+          
+
+    </script>
+</body>
+</html>

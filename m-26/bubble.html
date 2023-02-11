@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bubble</title>
+</head>
+<body>
+    
+    <main>
+        <section id="parent-section">
+            <h2>Hello this is a bubble javascript</h2>
+            <ul id="ul-tag">
+                <li>this is item -1</li>
+                <li id="item-2">this is item -2</li>
+                <li id="item-3">this is item -3</li>
+                <li>this is item -4</li>
+                <li>this is item -5</li>
+            </ul>
+        </section>
+    </main>
+
+    <script>
+        // cliked all document and tag 
+        document.getElementById('item-2').addEventListener('click', function(event) {
+            console.log('cliked second item');
+            
+        })
+
+        //  stop popagetion means only cliked targeted item
+        document.getElementById('item-3').addEventListener('click', function(event) {
+            console.log('cliked second item');
+            event.stopPropagation()
+        })
+
+        //  ul  clieked handeler
+        document.getElementById('ul-tag').addEventListener('click', function(){
+            console.log("cliked Ul tag");
+        })
+
+        // section cliked handeler
+        document.getElementById('parent-section').addEventListener('click' , function(){
+            console.log('cliked  section');
+            
+        })
+
+    </script>
+</body>
+</html>
