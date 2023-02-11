@@ -57,12 +57,21 @@ function showSomething(){
 
 //  hide card when click buy now button   unsolved -- 6
 
+const removeButton = document.getElementsByClassName('btn');
+for (const perBtn of removeButton) {
+    perBtn.addEventListener('click' , function(event){
+        event.target.parentNode.removeChild(event.target)
+    })
+}
+
+// if click buy now button then remove this card
 /* document.getElementById('shoes-btn1').addEventListener('click' , function(){
    const cardRemove =  document.getElementById('shoes-card1');
    cardRemove.style.display = 'none';
 
 }) */
 
+// if click any buy now button remove all card
 /* const allBuyNowBtn = document.getElementsByClassName('panda-btn-buy-now');
 
 for (const perBtn of allBuyNowBtn) {
