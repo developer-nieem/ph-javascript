@@ -1,12 +1,12 @@
 /* 
 function getMax(nila, dila, mila) {
-  if (nila > dila && dila > mila) {
-    console.log("nila will get cake");
-  } else if (dila > nila && dila > mila) {
-    console.log("dila will get cake");
-  } else {
-    console.log("mila will get cake");
-  }
+      if (nila > dila && dila > mila) {
+        console.log("nila will get cake");
+      } else if (dila > nila && dila > mila) {
+        console.log("dila will get cake");
+      } else {
+        console.log("mila will get cake");
+      }
 }
  */
 
