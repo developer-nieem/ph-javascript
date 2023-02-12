@@ -19,19 +19,19 @@ var dailyWork= ["১) রাত ৮ টা বাজে মডিউল আন�
 
 // ======== Problem solving 3
 
-var i = dailyWork.length;
+/* var i = dailyWork.length-1;
 while(i >= 0 ){
     const element = dailyWork[i];
     console.log(element);
     i--;
-}
+} */
 
 
 // ======== Problem solving 4
-/* 
-for (let i = dailyWork.length; i >= 0; i--) {
+
+for (let i = dailyWork.length-1; i >= 0; i--) {
     const element = dailyWork[i];
 
     console.log(element);
     
-} */
+}
