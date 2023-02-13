@@ -55,11 +55,16 @@
 document.getElementById('deposit-btn').addEventListener('click', function(){
 
     const depositInputValue =  getValueFromInput('deposit-input');
-
+    // console.log(typeof depositInputValue);
+        
     const depositBlanceUpdate = getTextElementValueById('deposit-blance');
 
     // calculate and set value deposit balance 
     const totalDepositBlance =  depositBlanceUpdate + depositInputValue;
+    if(isNaN(totalDepositBlance)){
+        alert('put your money')
+        return
+    }
     setValueTextElementById('deposit-blance', totalDepositBlance);
 
     // total balance 
@@ -81,13 +86,17 @@ document.getElementById('withdraw-btn').addEventListener('click', function(){
         const withdrawBlanceUpdate = getTextElementValueById('withdraw-blance');
         
         const totalWithdrawBlance =   withdrawBlanceUpdate + withdrawInputValue;
+
+        if(isNaN(totalWithdrawBlance)){
+            alert('put your withdraw money')
+            return
+        }
         setValueTextElementById('withdraw-blance', totalWithdrawBlance);
         
        
         const totalBalanceElement =  getTextElementValueById('blance-total');
     
        const reduceTotalBalanceElement = totalBalanceElement - withdrawInputValue;
-        
         setValueTextElementById('blance-total', reduceTotalBalanceElement);
   
    

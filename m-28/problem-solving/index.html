@@ -15,14 +15,14 @@
         <section class="mt-5 w-50 m-auto d-flex flex-column gap-3  ">
             
                 <div class="mb-3">
-                  <input type="email" class="form-control" id="input-box">
+                  <input type="email" class="form-control p-4" id="input-box">
                 </div>
                 <div class="text-center">
-                <button id="double" type="submit" class="btn btn-primary">double </button>
-                <button id="triple" type="submit" class="btn btn-primary">triple </button>
+                <button id="double" type="submit" class="btn btn-primary p-4">double </button>
+                <button id="triple" type="submit" class="btn btn-primary p-4">triple </button>
                 </div>
               
-                <h2 id="output-total-value" class="text-warning text-center mt-3"></h2>
+                <h2 id="output-total-value" class="text-warning text-center mt-3 "></h2>
         </section>
     </main>
 
@@ -40,8 +40,9 @@
             
             const getValueFromInput = document.getElementById('input-box');
             const inputValueString = getValueFromInput.value;
+            // console.log(typeof inputValueString);
             const inputValue =  parseFloat(inputValueString);
-
+            //   console.log(typeof inputValue);
             getValueFromInput.value = "";
 
             if(isNaN(inputValue)){
