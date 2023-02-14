@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>discount</title>
+    
+</head>
+<body>
+    
+    <main class=" bg-black ">
+        <section class=" text-white  mx-auto p-24 flex gap-28 justify-center items-center h-screen">
+            <!-- basic discount -->
+            <div class="bg-neutral-900 p-8 shadow-slate-300 ">
+                <h2 >Products Price: $<span id="price-basics">1200</span></h2>
+                <button id="basic-disc-btn" class="bg-orange-600 px-7 py-2 rounded-lg my-8 font-extrabold hover:bg-slate-700">Discount</button> <span>30%</span>
+                <h2 >total cost : <span id="cost"></span></h2>
+            </div>
+            <!-- advance discount -->
+            <div class="bg-neutral-900 p-8 shadow-slate-300">
+                <h2 >Products Price: $<span id="price-advance">1200</span></h2>
+                <div class="flex items-center gap-4 text-black">
+                    <input id="dicount-input" type="text" class="p-3 h-7 w-28 rounded-sm" placeholder="type'DISC30'">
+                    <button id="discount-advance-btn" class="bg-orange-600 px-4 py-2 rounded-lg my-8 font-extrabold hover:bg-slate-700">Discount</button> 
+                </div>
+                <h2 >total cost : <span id="cost-advance"></span></h2>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
