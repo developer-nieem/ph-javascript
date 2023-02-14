@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/da6ef45512.js" crossorigin="anonymous"></script>
+    <title>editor</title>
+</head>
+<body>
+    
+    <main>
+        <section class="bg-sky-300 w-7/12 mx-auto m-11 p-7 rounded-md shadow-lg shadow-gray-900">
+            <h2 class="text-center text-2xl font-semibold"> Nieem's text editor</h2>
+           <div class="border border-black m-8 ">
+            <div class="flex justify-between p-3 border-b-2 border-black">
+                <div class="space-x-4">
+                    <button id="bold"><i class="fa-solid fa-bold"></i></button>
+                    <button id="italic"><i class="fa-solid fa-italic"></i></button>
+                    <button id="underline"><i class="fa-solid fa-underline"></i></button>
+                </div>
+                <div class="space-x-4" >
+                    <button id="left-text"><i class="fa-solid fa-align-left"></i></button>
+                    <button id="text-center"><i class="fa-solid fa-align-center"></i></button>
+                    <button id="text-right"><i class="fa-solid fa-align-right"></i></button>
+                    <button id="text-justify"><i class="fa-solid fa-align-justify"></i></button>
+                </div>
+                <div class="space-x-4" >
+                    <input class="w-10" type="number" name="" id="">
+                    <button class="px-2">aA</button>
+                    <input type="color" name="" id="">
+                </div>
+            </div>
+            <div class="p-5">
+                <textarea class="w-full outline-none p-4" name="" id="text-editor" cols="30" rows="10"></textarea>
+            </div>
+           </div>
+        </section>
+    </main>
+    <script src="js/main.js"></script>
+</body>
+</html>
