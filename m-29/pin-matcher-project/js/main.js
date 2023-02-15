@@ -31,3 +31,18 @@ document.getElementById('calculate-number').addEventListener('click' , function(
     
 })
 
+document.getElementById('submit-pin-match').addEventListener('click', function(){
+    const generatePin = document.getElementById('display-pin').value;
+    const typeNumber =  document.getElementById('match-pin-input').value;
+
+    const success =  document.getElementById('success');
+    const faild =  document.getElementById('faild');
+    if(generatePin === typeNumber){
+        success.style.display = "block";
+        faild.style.display = "none";
+    }else{
+        faild.style.display = "block";
+        success.style.display = "none";
+    }
+})
+
