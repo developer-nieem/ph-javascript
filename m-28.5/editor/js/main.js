@@ -50,3 +50,37 @@ document.getElementById('text-justify').addEventListener('click' , function(){
     
 })
 
+// font size 
+document.getElementById('text-size').addEventListener('click' , function(){
+    
+    const getvalueFromInput =  document.getElementById('text-size');
+    const value =  getvalueFromInput.value;
+    console.log(value);
+    
+    getTextEditorById('text-editor').style.fontSize = value +'px';
+    
+})
+
+// font style 
+document.getElementById('text-style').addEventListener('toggle' , function(){
+    
+    const getvalueFromInput =  document.getElementById('text-style');
+    console.log(getvalueFromInput);
+    
+    getTextEditorById('text-editor').style.fontSize
+    
+})
+
+// text color
+document.getElementById('text-color').addEventListener('click' , function(){
+    
+    const getvalueFromInput =  document.getElementById('text-color');
+    const value =  getvalueFromInput.value;
+    console.log(value);
+    
+    getTextEditorById('text-editor').style.color = value ;
+    
+})
+
+
+
