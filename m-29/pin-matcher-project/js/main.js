@@ -22,6 +22,13 @@ document.getElementById('calculate-number').addEventListener('click' , function(
     if(isNaN(perValue)){
         if (perValue === "C") {
             document.getElementById('match-pin-input').value = '';
+        }else if(perValue === "<"){
+            const valuePin = document.getElementById('match-pin-input').value;
+            const pinSplit =  valuePin.split('');
+            pinSplit.pop();
+            const leftValue = pinSplit.join('');
+            document.getElementById('match-pin-input').value = leftValue;
+           
         }
     }else{
         const allNumebr =  previousVale + perValue
