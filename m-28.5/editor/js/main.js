@@ -4,10 +4,16 @@ function getTextEditorById(id){
     return texEditorInput;
 
 }
+// function buttonColor(e){
+//     e.target.classList.toggle('bg-purple-600')
+//     e.target.classList.toggle('text-white')
+// }
 //   make bold
-document.getElementById('bold').addEventListener('click' , function(){
+document.getElementById('bold').addEventListener('click' , function(e){
     
-    getTextEditorById('text-editor').style.fontWeight =  'bold';
+    getTextEditorById('text-editor').classList.toggle('font-bold');
+    // buttonColor(e)
+    // document.getElementById('text-editor')
     
 })
 // make italic
