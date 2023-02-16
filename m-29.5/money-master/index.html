@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Money master</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.50.1/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+<body>
+    
+    <header>
+        <h2 class="text-center text-4xl font-semibold mt-20 text-blue-600">Money Master</h2>
+    </header>
+    <main>
+        <section class=" md:flex gap-10 p-16">
+            <div class="md:w-6/12 ">
+                <img class="w-full" src="images.jpeg" alt="" srcset="">
+            </div>
+            <div class="md:w-6/12 text-center bg-slate-300 p-10 space-y-4">
+                <h3 class="text-2xl font-semibold">Income</h3>
+                <p> Income: <input id="income" class="w-28 md:ml-3 " type="text"> </p>
+                <h3 class="text-2xl font-semibold">Expenses</h3>
+                <p> Food:<input class="w-32 md:ml-4 expenses" type="text"> </p>
+                <p> Rent:<input class="w-32 md:ml-5 expenses" type="text"> </p>
+                <p> Cloths:<input class="w-32 md:ml-2 expenses" type="text"> </p>
+                <button id="calculate-btn" class="btn btn-primary">Calculate</button>
+                <h2 class="text-2xl font-semibold">Total Expens $<span id="total-expens">00</span> </h2>
+                <h2 class="text-2xl font-semibold">Balance $<span id="left-balance">00</span> </h2>
+                <p> save:  <input id="save-percent" class="w-14 " type="text"> %  <button id="save-balance"  class="btn btn-primary mt-3 md:mt-0"> Save</button></p>
+                <h2 class="text-2xl font-semibold">Saving amount $<span  id="saving-amount">00</span> </h2>
+                <h2  class="text-2xl font-semibold">Remaining Balance $<span id="remaining-balance">00</span> </h2>
+            </div>
+        </section>
+    </main>
+
+    <!-- -->
+    <script src="js/main.js"></script>
+</body>
+</html>
