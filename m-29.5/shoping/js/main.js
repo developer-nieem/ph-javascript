@@ -21,8 +21,16 @@ function setInformationOnTable(productName ,slnumber, firstPrice , firstQty , to
         <td class="total">${totalFirstProducts}</td>
     `
     getTableBody.appendChild(tr);
+
+    // cart item count 
+    document.getElementById('count-cart-item').innerText =  slnumber;
+    document.getElementById('items-count').innerText =  slnumber;
 }
 
+function disabledBtn(btnId){
+    const getButton =   document.getElementById(btnId);
+    getButton.setAttribute('disabled' , true);
+}
 
 let srialNumber=0 ;
 
@@ -38,6 +46,8 @@ document.getElementById('first-cart-btn').addEventListener('click' , function(){
     srialNumber += 1;
     setInformationOnTable('first-product-name',srialNumber, firstPrice , firstQty , totalFirstProducts)
 
+ 
+    disabledBtn('first-cart-btn')
     // const getProductName =  document.getElementById('first-product-name').innerText;
     // const getTableBody =   document.getElementById('table-show-list');
     // const tr =  document.createElement('tr');
@@ -62,6 +72,8 @@ document.getElementById('second-cart-btn').addEventListener('click', function(){
 
  srialNumber += 1;
     setInformationOnTable('second-product-name',srialNumber, secondPrice , secondQty , totalSecondPrice)
+
+    disabledBtn('second-cart-btn');
 })
 
 document.getElementById('third-cart-btn').addEventListener('click' , function(e){
@@ -81,6 +93,9 @@ document.getElementById('third-cart-btn').addEventListener('click' , function(e)
     
     srialNumber += 1;
     setInformationOnTable('third-product-name' , srialNumber, thirdPrice , thirdQty , thirdTotal)
+    
+    disabledBtn('third-cart-btn')
+    
 })
 
 document.getElementById('fourth-cart-btn').addEventListener('click' , function(e){
@@ -97,7 +112,9 @@ document.getElementById('fourth-cart-btn').addEventListener('click' , function(e
     
     
     srialNumber += 1;
-    setInformationOnTable('fourth-product-name' , srialNumber, fourthPrice , fourthQty , fourthTotal)
+    setInformationOnTable('fourth-product-name' , srialNumber, fourthPrice , fourthQty , fourthTotal);
+
+    disabledBtn('fourth-cart-btn');
 })
 document.getElementById('fifth-cart-btn').addEventListener('click' , function(e){
     
@@ -118,5 +135,6 @@ document.getElementById('fifth-cart-btn').addEventListener('click' , function(e)
     srialNumber += 1;
     setInformationOnTable('fifth-product-name' , srialNumber, fifthPrice , fifthQty , fifthTotal);
     
+    disabledBtn('fifth-cart-btn')
 })
 
