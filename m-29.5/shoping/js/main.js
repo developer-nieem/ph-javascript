@@ -18,10 +18,11 @@ function setInformationOnTable(productName ,slnumber, firstPrice , firstQty , to
         <td>${getProductName}</td>
         <td>${firstPrice}</td>
         <td>${firstQty}</td>
-        <td>${totalFirstProducts}</td>
+        <td class="total">${totalFirstProducts}</td>
     `
     getTableBody.appendChild(tr);
 }
+
 
 let srialNumber=0 ;
 
@@ -50,3 +51,72 @@ document.getElementById('first-cart-btn').addEventListener('click' , function(){
     // getTableBody.appendChild(tr);
 
 })
+
+
+
+document.getElementById('second-cart-btn').addEventListener('click', function(){
+    const secondPrice =  getInnerTextFromElement('second-price');
+    const secondQty =  getInnerTextFromElement('second-qty');
+
+    const totalSecondPrice  = secondPrice * secondQty;
+
+ srialNumber += 1;
+    setInformationOnTable('second-product-name',srialNumber, secondPrice , secondQty , totalSecondPrice)
+})
+
+document.getElementById('third-cart-btn').addEventListener('click' , function(e){
+    // console.log(e.target.parentNode.parentNode.children);
+    
+    const thirdPriceString =  e.target.parentNode.parentNode.children[2].children[0].innerText;
+    const thirdPrice = parseInt(thirdPriceString);
+
+    const thirdQtyString =  e.target.parentNode.parentNode.children[3].children[0].innerText;
+    const thirdQty = parseInt(thirdQtyString);
+
+  
+  
+    const thirdTotal =  thirdPrice * thirdQty;
+    // const thirdProductsName =  e.target.parentNode.parentNode.children[0].innerText;
+    
+    
+    srialNumber += 1;
+    setInformationOnTable('third-product-name' , srialNumber, thirdPrice , thirdQty , thirdTotal)
+})
+
+document.getElementById('fourth-cart-btn').addEventListener('click' , function(e){
+    
+    const fourthPriceString =  e.target.parentNode.parentNode.children[2].children[0].innerText;
+    const fourthPrice = parseInt(fourthPriceString);
+
+    const fourthQtyString =  e.target.parentNode.parentNode.children[3].children[0].innerText;
+    const fourthQty = parseInt(fourthQtyString);
+
+  
+  
+    const fourthTotal =  fourthPrice * fourthQty;
+    
+    
+    srialNumber += 1;
+    setInformationOnTable('fourth-product-name' , srialNumber, fourthPrice , fourthQty , fourthTotal)
+})
+document.getElementById('fifth-cart-btn').addEventListener('click' , function(e){
+    
+    const fifthPriceString =  e.target.parentNode.parentNode.children[2].value;
+    const fifthPrice = parseInt(fifthPriceString);
+
+    const fifthQtyString =  e.target.parentNode.parentNode.children[3].value;
+    const fifthQty = parseInt(fifthQtyString);
+
+  if(isNaN(fifthPrice) || isNaN(fifthQty)){
+    alert('put price and qty');
+    return;
+  }
+  
+    const fifthTotal =  fifthPrice * fifthQty;
+    
+    
+    srialNumber += 1;
+    setInformationOnTable('fifth-product-name' , srialNumber, fifthPrice , fifthQty , fifthTotal);
+    
+})
+
