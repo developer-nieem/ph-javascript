@@ -18,18 +18,34 @@ function setInformationOnTable(productName ,slnumber, firstPrice , firstQty , to
         <td>${getProductName}</td>
         <td>${firstPrice}</td>
         <td>${firstQty}</td>
-        <td class="total">${totalFirstProducts}</td>
+        <td class="item-total-price">${totalFirstProducts}</td>
     `
     getTableBody.appendChild(tr);
 
     // cart item count 
     document.getElementById('count-cart-item').innerText =  slnumber;
     document.getElementById('items-count').innerText =  slnumber;
+
+    totalCalculate()
 }
 
 function disabledBtn(btnId){
     const getButton =   document.getElementById(btnId);
     getButton.setAttribute('disabled' , true);
+}
+
+
+function totalCalculate() {
+    const itemPrice = document.getElementsByClassName('item-total-price');
+    console.log(itemPrice);
+    const totalItemPrice = document.getElementById('totalItemPrice')
+    let sum = 0;
+    for (const price of itemPrice) {
+        console.log(price.innerText);
+        sum = sum + parseInt(price.innerText)
+    }
+    console.log(sum);
+ return document.getElementById('totalItemPrice').innerText = sum;
 }
 
 let srialNumber=0 ;
