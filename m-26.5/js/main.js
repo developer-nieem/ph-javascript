@@ -60,7 +60,9 @@ function showSomething(){
 const removeButton = document.getElementsByClassName('btn');
 for (const perBtn of removeButton) {
     perBtn.addEventListener('click' , function(event){
-        event.target.parentNode.removeChild(event.target)
+        // event.target.parentNode.removeChild(event.target)
+        // remove card
+       event.target.parentNode.parentNode.remove()
     })
 }
 
