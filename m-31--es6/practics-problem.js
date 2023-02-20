@@ -22,7 +22,7 @@ console.log(number(10)); */
 
 // problem 2
 
-const friends =  ['hasanq' , 'masanqqq' , 'kasanq' , 'tasannnnn'];
+/* const friends =  ['hasanq' , 'masanqqq' , 'kasanq' , 'tasannnnn'];
 
 const friendName = allname =>{
     
@@ -39,4 +39,34 @@ const friendName = allname =>{
     return evenFriend;
 }
 
-console.log(friendName(friends));
+console.log(friendName(friends)); */
+
+
+// problem 3 
+
+/* const number= [25,88,66,99,55,88,74];
+
+const getNumberCalculation = allNumber => {
+
+        let sum = 0;
+    for (const number of allNumber) {
+        const Square =  Math.pow(number,2);
+        sum =  sum + Square
+    }
+    
+  return sum / 7;
+}
+
+console.log(getNumberCalculation(number)); */
+
+// problem 4
+
+const miximumNumber = (arr1 , arr2 ) => {
+
+    const newArr =  [...arr1 , ...arr2];
+    return Math.max(...newArr);
+}
+const arr1 =  [50, 26, 50, 90, 80];
+const arr2 =  [60, 88, 300,1000, 500, 600];
+
+console.log(miximumNumber(arr1 , arr2));
