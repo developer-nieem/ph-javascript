@@ -18,3 +18,7 @@ console.log(evenNum);
 
 const lowPrice =  products.filter(n=> n.price < 10000);
 console.log(lowPrice);
+
+
+
+
