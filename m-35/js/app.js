@@ -8,10 +8,22 @@ const loadPhoneData =  async(searchText) => {
 loadPhoneData('max')
 
 const displayPhoneData = phones =>{
-    console.log(phones);
+    
     const phoneCard =  document.getElementById('phones-card');
     phoneCard.innerText = '';
+    
+    // Show phone items only 10
+    phones = phones.slice(0, 10);
 
+    // search not found phone
+    const noPhone =  document.getElementById('no-phones');
+    if(phones.length === 0){
+        noPhone.classList.remove('d-none')
+    }else{
+        noPhone.classList.add('d-none')
+    }
+
+    // show phones
     phones.forEach(phone => {
         console.log(phone);
         const div =  document.createElement('div');
@@ -26,10 +38,27 @@ const displayPhoneData = phones =>{
       </div>
         `
         phoneCard.appendChild(div)
+         // loading phones
+     
     });
+    loadingData(false);
 }
 
 document.getElementById('seacrh-btn').addEventListener('click' , function(){
     const inputFiled =  document.getElementById('search-filed').value;
     loadPhoneData(inputFiled);
+
+    // loading phones
+    loadingData(true);
 })
+
+// lodaing spinner before data loading
+const loadingData = isLoading => {
+    const loadingData =  document.getElementById('loadingData');
+
+    if(isLoading){
+        loadingData.classList.remove('d-none');
+    }else{
+        loadingData.classList.add('d-none');
+    }
+}
