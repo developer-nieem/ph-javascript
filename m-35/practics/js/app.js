@@ -1,13 +1,13 @@
-const loadPhoneData = async(searchText) => {
+const loadPhoneData = async(searchText , itemLimite) => {
     const url = `https://openapi.programming-hero.com/api/phones?search=${searchText}`;
     const res = await fetch(url);
     const data = await res.json();
-    displayPhoneData(data.data);
+    displayPhoneData(data.data , itemLimite);
 }
 
 loadPhoneData('Pro Max')
 
-const displayPhoneData = phones =>{
+const displayPhoneData = (phones , itemLimite) =>{
     const phonesCard =  document.getElementById('phones-card');
     // remove defult card when search
     phonesCard.innerText = '';
@@ -21,6 +21,14 @@ const displayPhoneData = phones =>{
             noPhone.classList.add('d-none')
         }
 
+        // only 10 products show
+            const phoneItemShow =  document.getElementById('phoneItemShow');
+        if(itemLimite && phones.length > 10){
+            phones=phones.slice(0,10);
+            phoneItemShow.classList.remove('d-none');
+        }else{
+            phoneItemShow.classList.add('d-none');
+        }
 
 
     // load phone data
@@ -44,14 +52,27 @@ const displayPhoneData = phones =>{
 
 // Search phones name
 document.getElementById('search-btn').addEventListener('click', function(){
+    // const searchField = document.getElementById('search-field').value;
+    // loadPhoneData(searchField);
+
+    // loadingDataSpin(true);
+
+    showPhoneItem(10)
+})
+
+// show phones item
+const showPhoneItem =  (itemLimite) => {
     const searchField = document.getElementById('search-field').value;
-    loadPhoneData(searchField);
+    loadPhoneData(searchField , itemLimite);
 
     loadingDataSpin(true);
+}
+
+document.getElementById('phoneItemShow-btn').addEventListener('click' , function(){
+    showPhoneItem()
 })
 
 // loading data spin 
-
 const loadingDataSpin =  isLoading => {
     const getSpin = document.getElementById('loading-Data-Spin');
     if(isLoading){
