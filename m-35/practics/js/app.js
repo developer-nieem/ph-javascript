@@ -41,6 +41,7 @@ const displayPhoneData = (phones , itemLimite) =>{
                     <div class="card-body">
                         <h5 class="card-title">${phone.phone_name}</h5>
                         <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <button onclick="showPhoneDetails('${phone.slug}')" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#phoneDetailsModal"> Show Details</button>
                     </div>
             </div>
         
@@ -80,4 +81,19 @@ const loadingDataSpin =  isLoading => {
     }else{
         getSpin.classList.add('d-none');
     }
+}
+
+
+// show phone details on modal 
+
+const showPhoneDetails =  async(id) => {
+    const url =  `https://openapi.programming-hero.com/api/phone/${id}`;
+    const res = await fetch(url);
+    const data =  await res.json();
+    displayInformationInModal(data.data);
+
+}
+
+const displayInformationInModal =  phone =>{
+    document.getElementById('phoneDetailsModalLabel').innerText = phone.name
 }
