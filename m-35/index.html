@@ -12,21 +12,48 @@
         <h1>Phone shops</h1>
     </header>
     <main class="container">
+        <!-- search aria  -->
             <section>
                 <div class="input-group flex-nowrap my-4 w-50 m-auto">
                    
                     <input id="search-filed" type="text" class="form-control " aria-label="Username" aria-describedby="addon-wrapping">
                     <div id="seacrh-btn" class="btn btn-primary">Search</div>
                   </div>
+
+                  <!-- modal for phones details  -->
+                    <!-- Modal -->
+                    <div class="modal fade" id="phoneDetailsModal" tabindex="-1" aria-labelledby="phoneDetailsModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="phoneDetailsModalLabel">Modal title</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                            <div id="phone-details-body" class="modal-body">
+                            
+                            </div>
+                            <div class="modal-footer">
+                                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
             </section>
 
+            <!-- phone card area -->
         <section>
             <div id="phones-card" class="row row-cols-1 row-cols-md-3 g-4 ">
                 
               </div>
 
+              <!-- warning message  -->
               <div id="no-phones" class="d-none text-center mt-5">
                 <h1 class="text-warning">No Phone found! Please search again</h1>
+              </div>
+
+              <!-- show all phones button -->
+              <div id="show-all" class="d-none text-center">
+                    <div id="show-all-btn" class="btn btn-primary"> Show All</div>
               </div>
         </section>
 
