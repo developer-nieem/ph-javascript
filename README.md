@@ -570,7 +570,7 @@ ii. Hoisting is javaScript default behavior of moving all declarations to the to
 
 ## 🌐 Socials: Connect with Rakibul Islam!
 
-[Facebook](https://www.facebook.com/ariyan.rakib890/)
+[Facebook](https://web.facebook.com/m.nieemhossen//)
 
 
 <h4>❤️🤔 You can follow my Github and other social accounts 🤔❤️</h4>
