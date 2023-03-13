@@ -37,16 +37,16 @@ function disabledBtn(btnId){
 
 function totalCalculate() {
     const itemPrice = document.getElementsByClassName('item-total-price');
-    console.log(itemPrice);
-    const totalItemPrice = document.getElementById('totalItemPrice')
     let sum = 0;
     for (const price of itemPrice) {
-        console.log(price.innerText);
+        // console.log(price.innerText);
         sum = sum + parseInt(price.innerText)
     }
-    console.log(sum);
+    // console.log(sum);
  return document.getElementById('totalItemPrice').innerText = sum;
 }
+
+
 
 let srialNumber=0 ;
 

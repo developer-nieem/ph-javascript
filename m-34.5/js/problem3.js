@@ -30,13 +30,18 @@ const displayRegion = countrys =>{
         // get language name
        
         const optionForLanguage =  document.createElement('option');
-        optionForLanguage.innerText = ` ${country.languages} `
+        optionForLanguage.innerText = ` ${country.cca3} `
         
         languageSelectOption.appendChild(optionForLanguage);
         
     });
     
 }
+
+const displayLanguage = () => {
+
+}
+
 
 // const displayCapital = countrys =>{
 //     const selectOption = document.getElementById('select-option');

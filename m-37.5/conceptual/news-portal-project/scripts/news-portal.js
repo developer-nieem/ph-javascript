@@ -26,6 +26,7 @@ const fetchItemLink =  (category_id, categoryName ) =>{
     .then(data => displayItemInfo(data.data , categoryName))
 }
 
+
 const displayItemInfo =  (data, categoryName) =>{
     
       document.getElementById('items-count').innerText = data.length;
@@ -35,7 +36,7 @@ const displayItemInfo =  (data, categoryName) =>{
     const newsSection =  document.getElementById('news-section');
     document.getElementById('news-section').innerText = '';
       data.forEach(news => {
-       console.log(news);
+      //  console.log(news);
         newsSection.innerHTML += ` 
         <div class="card mb-3" ">
         <div class="row g-0">
@@ -63,7 +64,7 @@ const displayItemInfo =  (data, categoryName) =>{
                         <p>star: <b>${news.rating.number}</b></p>
                     </div>
                     <div>
-                            <button class="btn btn-primary">See more</button>
+                            <button onclick="LoadPostDetailsData('${news._id}')" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#newsDetailsModal">See more</button>
                     </div>
             </div>
           </div>
@@ -72,4 +73,64 @@ const displayItemInfo =  (data, categoryName) =>{
         `
       })
     
+}
+
+
+// post details with modal
+
+const LoadPostDetailsData = (id) =>{
+  // console.log(id);
+
+  const url =  `https://openapi.programming-hero.com/api/news/${id}`;
+  
+
+  fetch(url)
+  .then(res => res.json())
+  .then(data => ShowostDetailsData(data.data[0]))
+  .catch(error => console.log(error));
+  
+}
+
+const ShowostDetailsData = (data) =>{
+
+  console.log(data);
+    const modaBody  =  document.getElementById('modal-body');
+    console.log(modaBody);
+  
+    modaBody.innerHTML = `
+    <div class="card mb-3" ">
+    <div class=" g-0">
+      <div class="col">
+        <img src="${data.image_url}" class="img-fluid " >
+      </div>
+      <div class="col">
+        <div class="card-body">
+          <h5 class="card-title">${data.title}</h5>
+          <p class="card-text">${data.details.slice(0, 200)}....</p>
+         
+        </div>
+        <div class="card-footer d-flex justify-content-between align-items-center">
+                <div class="d-flex gap-2 ">
+                    <img src="${data.author.img}" style="width: 40px ; height: 40px" class="rounded-circle">
+                    <div>
+                    <h4>${data.author.name ? data.author.name : "No name"}</h4>
+                    <p>  ${data.author.published_date ? data.author.published_date:"no date"}</p>
+                    </div>
+                </div>
+                <div>
+                <p>view:<b>${data.total_view? data.total_view : "no view"}</b></p>
+                </div>
+                <div>
+                    <p>star: <b>${data.rating.number}</b></p>
+                </div>
+                <div>
+                        <button onclick="LoadPostDetailsData('${data._id}')" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#newsDetailsModal">See more</button>
+                </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    `
+
 }

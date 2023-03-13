@@ -9,20 +9,32 @@ document.getElementById('calculate-btn').addEventListener('click', function(){
        const perValue =  parseFloat(perValueString);
        element.value = '';
        
-       if(isNaN(perValue)){
-         alert('put numbers');
+       if(isNaN(perValue)  || perValue < 0){
+         alert('put vaild number numbers');
          return;
        }
        sum =  sum + perValue
    }
-   
-   document.getElementById('total-expens').innerText = sum;
 
-    //    income
+   //    income
     const incomeValueString =  document.getElementById('income').value;
     const incomeValue =  parseFloat(incomeValueString);
-    if(isNaN(incomeValue)){
-        alert('put your income');
+
+    // warning if cost more than income
+    if(sum > incomeValue){
+        alert('your cost more than income');
+        return;
+    }
+
+   document.getElementById('total-expens').innerText = sum;
+
+    // //    income
+    // const incomeValueString =  document.getElementById('income').value;
+    // const incomeValue =  parseFloat(incomeValueString);
+
+    
+    if(isNaN(incomeValue)  || incomeValue < 0){
+        alert('put your vaild income');
         return ;
     }
 
@@ -32,6 +44,9 @@ document.getElementById('calculate-btn').addEventListener('click', function(){
 
     const leftBalance =  incomeValue - totalExpens;
     document.getElementById('left-balance').innerText =  leftBalance; 
+
+
+   
 })
 
 
@@ -42,8 +57,12 @@ document.getElementById('save-balance').addEventListener('click' , function(){
     const saveInputValue= parseFloat(saveInputValueString);
     const makePercent =  saveInputValue / 100;
 
-    if(isNaN(saveInputValue)){
+    document.getElementById('save-percent').value = "";
+    if(isNaN(saveInputValue) || saveInputValue < 0 ){
         alert('put number');
+        return;
+    }else if(saveInputValue > 100){
+        alert('cannot put more than 100');
         return;
     }
     // get value from income input 
