@@ -15,7 +15,12 @@ function submitIssue(e) {
     
   }else if(assignedTo === ''){
     assignedTo1.style.border = `2px solid red`;
+    description1.style.border = `0px`;
+    
     return;
+  }else{
+    description1.style.border = `0px`;
+    assignedTo1.style.border = `0px`;
   }
 
   
@@ -42,7 +47,7 @@ const closeIssue = id => {
 
 const deleteIssue = id => {
   const issues = JSON.parse(localStorage.getItem('issues'));
-  const remainingIssues = issues.filter( issue.id !== id )
+  const remainingIssues = issues.filter( issues.id !== id )
   localStorage.setItem('issues', JSON.stringify(remainingIssues));
 }
 
@@ -56,6 +61,7 @@ const fetchIssues = () => {
   for (var i = 0; i < issues.length; i++) {
     const {id, description, severity, assignedTo, status} = issues[i];
 
+
     issuesList.innerHTML +=   `<div class="well">
                               <h6>Issue ID: ${id} </h6>
                               <p><span class="label label-info"> ${status} </span></p>
@@ -68,7 +74,4 @@ const fetchIssues = () => {
   }
 }
 
-const setStatusClosed =  () =>{
-  const issuesList = document.getElementById('issuesList');
-  issuesList.innerHTML = '';
-}
+
