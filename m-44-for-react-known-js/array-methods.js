@@ -7,8 +7,8 @@ const products = [
 ];
 
 // map give a return
-const productsName =  products.map(name=> name.name);
-// console.log(productsName);
+const productsName =  products.map(name=> name);
+console.log(productsName);
 
 const productsPrice = products.map(prices => {
     if (prices.price < 5000) {
@@ -19,7 +19,7 @@ const productsPrice = products.map(prices => {
 // for each  no return
 
 products.forEach(product=> {
-    // console.log(product);
+    console.log(product);
 })
 
 
@@ -29,9 +29,9 @@ const lowPrice =  products.filter(prices => prices.price < 5000)
 // console.log(lowPrice);
 
 const sName =  products.filter(p=> p.name.includes('n'));
-console.log(sName);
+// console.log(sName);
 
 
 //4. find  we can applay condition and give return first array of main array if fulfill the condition
 const special = products.find(p => p.name.includes('n'));
-console.log(special);
+// console.log(special);

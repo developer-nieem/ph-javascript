@@ -7,13 +7,13 @@ function submitIssue(e) {
   const assignedTo = getInputValue('issueAssignedTo');
   const id = Math.floor(Math.random()*100000000) + '';
  
+  const description1 = document.getElementById('issueDescription');
+  const assignedTo1 = document.getElementById('issueAssignedTo');
   if(description === ''  ){
-    const description1 = document.getElementById('issueDescription');
     description1.style.border = `2px solid red`;
     return;
     
   }else if(assignedTo === ''){
-    const assignedTo1 = document.getElementById('issueAssignedTo');
     assignedTo1.style.border = `2px solid red`;
     return;
   }
